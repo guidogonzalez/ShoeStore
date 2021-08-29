@@ -1,14 +1,16 @@
 <resources>
     <string name="app_name">ShoeStore</string>
-    <string name="button_new_login">New Login</string>
+    <string name="button_new_login">Create Account and Login</string>
     <string name="button_login_existing_account">Login Existing Account</string>
     <string name="hint_email">Enter email</string>
     <string name="hint_password">Enter password</string>
     <string name="title_welcome">Welcome</string>
-    <string name="description_welcome">to the Shoe Store Inventory App</string>
+    <string name="description_welcome">to the Shoe Store Inventory App
+        \n\t\t\tto continue press Next</string>
     <string name="button_next">Next</string>
     <string name="title_instructions">Instructions</string>
-    <string name="description_instructions">These are the instrucions</string>
+    <string name="description_instructions">To add a new shoe \npress the button on the bottom right\n\nif you want to logout, press the dot menu and proceed\n\nto get started continue!
+    </string>
     <string name="button_continue_shoe_list">Continue to the Shoe List</string>
     <string name="title_shoe_name">Shoe name:</string>
     <string name="title_shoe_company">Shoe Company:</string>
@@ -16,4 +18,8 @@
     <string name="title_shoe_description">Shoe Description:</string>
     <string name="button_save">Save</string>
     <string name="button_cancel">Cancel</string>
+    <string name="title_logout">Logout</string>
+    <string name="error_login">Please enter an email and password to continue.</string>
+    <string name="title_email">Email:</string>
+    <string name="title_password">Password:</string>
 </resources>

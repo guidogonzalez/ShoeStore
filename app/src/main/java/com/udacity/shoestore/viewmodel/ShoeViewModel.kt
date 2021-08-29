@@ -15,4 +15,8 @@ class ShoeViewModel : ViewModel() {
 
         _shoeLists.value?.add(shoe)
     }
+
+    fun clearShoes() {
+        _shoeLists.value?.clear()
+    }
 }
