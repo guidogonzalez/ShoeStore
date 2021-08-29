@@ -24,6 +24,7 @@ class ShoeDetailFragment : Fragment() {
     ): View? {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
+        binding.lifecycleOwner = this
 
         viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
 
@@ -45,11 +46,11 @@ class ShoeDetailFragment : Fragment() {
 
             viewModel.addShoe(shoe)
 
-            findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+            findNavController().navigateUp()
         }
 
         binding.buttonCancel.setOnClickListener {
-            findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+            findNavController().navigateUp()
         }
     }
 }

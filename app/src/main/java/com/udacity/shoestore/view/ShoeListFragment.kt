@@ -28,12 +28,12 @@ class ShoeListFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
 
         // We observe the list of shoes and go through the loop to add a view for each shoe
-        viewModel.shoeLists.observe(viewLifecycleOwner, Observer { newShoeList ->
+        viewModel.shoeList.observe(viewLifecycleOwner, Observer { newShoeList ->
 
             newShoeList.forEach { shoe ->
 
                 val itemShoeBinding: ItemShoeBinding =
-                    DataBindingUtil.inflate(layoutInflater, R.layout.item_shoe, container, false)
+                    DataBindingUtil.inflate(inflater, R.layout.item_shoe, container, false)
                 itemShoeBinding.shoe = shoe
                 binding.linearLayoutShoeList.addView(itemShoeBinding.root)
             }
@@ -42,6 +42,8 @@ class ShoeListFragment : Fragment() {
         binding.floatingActionButtonAdd.setOnClickListener {
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
+
+        setHasOptionsMenu(true)
 
         return binding.root
     }
@@ -52,8 +54,8 @@ class ShoeListFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
-        when (item!!.itemId) {
+
+        when (item.itemId) {
             R.id.menu_logout -> {
                 viewModel.clearShoes()
                 findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
