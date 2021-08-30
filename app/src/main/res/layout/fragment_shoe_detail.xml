@@ -2,7 +2,8 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.ShoeDetailFragment">
 
     <data>
 
@@ -13,8 +14,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".view.ShoeDetailFragment">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/textViewShoeNameDetail"
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="number"
             app:layout_constraintBottom_toBottomOf="@+id/textViewShoeSizeDetail"
             app:layout_constraintEnd_toEndOf="@+id/editTextShoeCompany"
             app:layout_constraintStart_toEndOf="@+id/textViewShoeSizeDetail"
