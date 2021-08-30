@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -33,17 +34,26 @@ class ShoeDetailFragment : Fragment() {
 
         binding.buttonSave.setOnClickListener {
 
-            val shoe = Shoe(
-                binding.editTextShoeName.text.toString(),
-                binding.editTextShoeSize.text.toString().toDouble(),
-                binding.editTextShoeCompany.text.toString(),
-                binding.editTextShoeDescription.text.toString(),
-                ArrayList()
-            )
+            if (!binding.editTextShoeName.text.isNullOrEmpty() && !binding.editTextShoeSize.text.isNullOrEmpty() &&
+                !binding.editTextShoeCompany.text.isNullOrEmpty() && !binding.editTextShoeDescription.text.isNullOrEmpty()
+            ) {
+                val shoe = Shoe(
+                    binding.editTextShoeName.text.toString(),
+                    binding.editTextShoeSize.text.toString().toDouble(),
+                    binding.editTextShoeCompany.text.toString(),
+                    binding.editTextShoeDescription.text.toString(),
+                    ArrayList()
+                )
 
-            viewModel.addShoe(shoe)
+                viewModel.addShoe(shoe)
 
-            findNavController().navigateUp()
+                findNavController().navigateUp()
+
+            } else {
+
+                Toast.makeText(context, getString(R.string.error_empty_fields), Toast.LENGTH_LONG)
+                    .show()
+            }
         }
 
         binding.buttonCancel.setOnClickListener {
