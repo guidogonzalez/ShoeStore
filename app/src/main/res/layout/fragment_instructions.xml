@@ -10,16 +10,13 @@
 
         <TextView
             android:id="@+id/textViewInstructionsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:text="@string/title_instructions"
-            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"
+            style="@style/titles" />
 
         <TextView
             android:id="@+id/textViewInstructionsDescription"
