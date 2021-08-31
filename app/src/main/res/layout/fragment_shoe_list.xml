@@ -5,6 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.ShoeListFragment">
 
+    <!-- Using Constraint Layout since it's easy to place anything and it resizes to any screen -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
