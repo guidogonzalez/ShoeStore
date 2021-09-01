@@ -11,7 +11,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
-import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.viewmodel.ShoeViewModel
 
 class ShoeDetailFragment : Fragment() {
@@ -26,6 +25,9 @@ class ShoeDetailFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
 
+        binding.lifecycleOwner = this
+        binding.shoeViewModel = viewModel
+
         return binding.root
     }
 
@@ -37,15 +39,8 @@ class ShoeDetailFragment : Fragment() {
             if (!binding.editTextShoeName.text.isNullOrEmpty() && !binding.editTextShoeSize.text.isNullOrEmpty() &&
                 !binding.editTextShoeCompany.text.isNullOrEmpty() && !binding.editTextShoeDescription.text.isNullOrEmpty()
             ) {
-                val shoe = Shoe(
-                    binding.editTextShoeName.text.toString(),
-                    binding.editTextShoeSize.text.toString().toDouble(),
-                    binding.editTextShoeCompany.text.toString(),
-                    binding.editTextShoeDescription.text.toString(),
-                    ArrayList()
-                )
 
-                viewModel.addShoe(shoe)
+                viewModel.addShoe()
 
                 findNavController().navigateUp()
 
